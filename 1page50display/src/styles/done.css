@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    width: 90vw;
+    padding-bottom: 10%;
+}
+
+.panel {
+    position: relative;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    color: white;
+    cursor: pointer;
+    flex: 0.7;
+    margin: 10px;
+    transition: flex 0.7s ease-in;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.panel h3 {
+    font-size: 24px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-content: flex-end;
+    padding-bottom: 10%;
+    padding-left: 10%;
+}
+
+.panel.active {
+    display: flex;
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 10;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100vw;
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        display: none;
+    }
+}

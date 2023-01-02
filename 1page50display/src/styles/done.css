@@ -1,7 +1,14 @@
 .container {
     display: flex;
-    width: 90vw;
+    width: 100vw;
     padding-bottom: 10%;
+}
+
+.expan {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-style: outset;
 }
 
 .panel {
@@ -44,9 +51,36 @@
 @media (max-width: 480px) {
     .container {
         width: 100vw;
+        height: 100vh;
+        flex-direction: column;
     }
-    .panel:nth-of-type(4),
+    .panel {
+        width: 80vw;
+        position: relative;
+        display: flex;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 30vh;
+        color: white;
+        cursor: pointer;
+        flex: 0.7;
+        margin: 10px;
+        transition: flex 0.7s ease-in;
+        box-sizing: border-box;
+        justify-content: center;
+    }
+    .panel h3 {
+        font-size: 24px;
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding-bottom: 0%;
+        padding-left: 0%;
+    }
+    /* .panel:nth-of-type(4),
     .panel:nth-of-type(5) {
         display: none;
-    }
+    } */
 }

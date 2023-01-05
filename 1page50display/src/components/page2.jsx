@@ -8,7 +8,6 @@ const ProgressSteps = () => {
     const [circle3, setCircle3] = useState(false);
     const [circle4, setCircle4] = useState(false);
     const circles = document.querySelectorAll('.circle');
-    const progress = document.querySelector('.progress');
 
     useEffect(() => {
         if (active === 1) {
@@ -16,25 +15,25 @@ const ProgressSteps = () => {
             setCircle2(false);
             setCircle3(false);
             setCircle4(false);
-            progress.style.width = '0' + '%';
+            document.querySelector('.progress').style.width = '0%';
         } else if (active === 2) {
             setCircle1(true);
             setCircle2(true);
             setCircle3(false);
             setCircle4(false);
-            progress.style.width = '25' + '%';
+            document.querySelector('.progress').style.width = '25%';
         } else if (active === 3) {
             setCircle1(true);
             setCircle2(true);
             setCircle3(true);
             setCircle4(false);
-            progress.style.width = '50' + '%';
+            document.querySelector('.progress').style.width = '50%';
         } else if (active === 4) {
             setCircle1(true);
             setCircle2(true);
             setCircle3(true);
             setCircle4(true);
-            progress.style.width = '75' + '%';
+            document.querySelector('.progress').style.width = '75%';
         }
     }, [active]);
 

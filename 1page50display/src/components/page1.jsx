@@ -10,7 +10,6 @@ const ExpendingCard = () => {
   const [card5, setCard5] = useState(false);
   return (
     <div className='main'>
-      <h1 className='expan'>EXPANDING</h1>
       <div className="container">
         <div className={`panel ${card1 ? "active" : ""}`} style={{ backgroundImage: `url(https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)` }} onClick={() => {
           setCard1(true);

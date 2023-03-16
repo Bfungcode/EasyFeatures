@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import ExpendingCard from './page1';
 import ProgressSteps from './page2';
+import SearchIcon from './page3';
 
 const Home = () => {
   return (
@@ -16,6 +17,10 @@ const Home = () => {
       <div className='d2'>
         <h1>2. PROGRESS STEPS</h1>
         <ProgressSteps />
+      </div>
+      <div className='d3'>
+        <h1>3. Search Icon</h1>
+        <SearchIcon />
       </div>
     </div>
   )

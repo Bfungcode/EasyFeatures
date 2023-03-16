@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import '../styles/dtwo.css'
+import '../styles/d2.css'
 
 const ProgressSteps = () => {
     const [active, setActive] = useState(1);

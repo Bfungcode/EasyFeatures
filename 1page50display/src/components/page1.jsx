@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/done.css';
+import '../styles/d1.css';
 
 const ExpendingCard = () => {
   const [active, setActive] = useState(false);

@@ -62,6 +62,7 @@ body {
     width: 0%;
     z-index: -1;
     background-color: var(--line-border-fill);
+    transition: 0.4s ease-in;
 }
 
 .circle {

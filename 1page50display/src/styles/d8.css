@@ -1,0 +1,23 @@
+.d8Wrapper {
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.soundButton {
+    width: 50%;
+    border: 0;
+    margin: 1%;
+    padding: 12px 24px;
+    font-size: 22px;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 800px) {
+    .d8Wrapper {
+        flex-direction: column;
+    }
+}

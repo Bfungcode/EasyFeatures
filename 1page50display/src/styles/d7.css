@@ -1,0 +1,85 @@
+.waveWrapper {
+    margin-top: 10%;
+    background-color: whitesmoke;
+    width: 100%;
+    color: black;
+    border-radius: 5%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.waveWrapper h1 {
+    text-align: center;
+}
+
+.waveForm {
+    position: relative;
+    width: 400px;
+    padding: 24px 48px;
+}
+
+.waveForm input {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px black solid;
+    background-color: transparent;
+    display: block;
+    padding: 10px 0;
+}
+
+.btnWave {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 80%;
+    padding: 15px;
+    border-radius: 5%;
+    border: 0;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+.waveForm input:focus,
+.waveform input:valid {
+    outline: 0;
+}
+
+.btnWave:active {
+    transform: scale(.98);
+}
+
+.waveText a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px black solid;
+}
+
+.waveText a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.waveForm label {
+    position: absolute;
+    top: 30px;
+}
+
+.waveForm label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.waveForm input:focus+label span,
+.waveForm input:valid+label span {
+    color: black;
+    transform: translateY(-30px);
+}

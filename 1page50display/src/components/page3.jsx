@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const SearchIcon = () => {
-    const [active, setActive] = useState(true);
+    const [active, setActive] = useState(false);
   return (
     <div className='container'>
         <div className='d3Wrapper'>

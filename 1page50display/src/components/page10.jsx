@@ -15,8 +15,8 @@ const FaqContent = () => {
         <button className="accordion">Section 1</button>
         <div className="panel">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
-            possimus!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+            possimus!ss
           </p>
         </div>
         <button className="accordion">Section 1</button>

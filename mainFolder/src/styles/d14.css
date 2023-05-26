@@ -1,0 +1,47 @@
+        .d14Wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .autoWrap {
+            background-color: whitesmoke;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            align-content: center;
+            margin: 5%;
+            padding: 42px 24px;
+        }
+        
+        autoT {
+            position: relative;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin-top: 5%;
+            opacity: 0;
+        }
+        
+        #textAuto {
+            width: 100%;
+            color: black;
+            text-align: center;
+        }
+        
+        input {
+            width: 50px;
+            padding: 5px;
+            font-size: 18px;
+            border-style: groove;
+            border-color: black;
+            text-align: center;
+        }
+        
+        input:focus {
+            outline: none;
+        }

@@ -10,6 +10,7 @@ import SoundBoard from "./page8";
 import FaqCollapse from "./page9";
 import HamburgerCollapse from "./page10";
 import Clock from "./page11";
+import KineticCss from "./page12";
 const Home = () => {
   return (
     <div className="hero">
@@ -61,7 +62,8 @@ const Home = () => {
         <Clock />
       </div>
       <div className="d12">
-        <h1></h1>
+        <h1>12. Kinetic Loader</h1>
+        <KineticCss />
       </div>
     </div>
   );

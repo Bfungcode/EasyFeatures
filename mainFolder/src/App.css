@@ -136,3 +136,21 @@ body {
     margin-top: 10%;
     margin-bottom: 5%;
 }
+
+.d13 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+.d14 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}

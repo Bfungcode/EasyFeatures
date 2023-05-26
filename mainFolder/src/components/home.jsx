@@ -11,6 +11,7 @@ import FaqCollapse from "./page9";
 import HamburgerCollapse from "./page10";
 import Clock from "./page11";
 import KineticCss from "./page12";
+import SkeletonLoader from "./page13";
 const Home = () => {
   return (
     <div className="hero">
@@ -64,6 +65,13 @@ const Home = () => {
       <div className="d12">
         <h1>12. Kinetic Loader</h1>
         <KineticCss />
+      </div>
+      <div className="d13">
+        <h1>13. Skeleton Loader</h1>
+        <SkeletonLoader />
+      </div>
+      <div className="d14">
+        <h1>13. Skeleton Loader</h1>
       </div>
     </div>
   );

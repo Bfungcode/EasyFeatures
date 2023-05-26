@@ -3,10 +3,6 @@
     height: 80px;
     width: 80px;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
 }
 
 .kinetic::after,

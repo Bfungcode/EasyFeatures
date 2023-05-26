@@ -7,9 +7,6 @@ import ContentSlide from "./page5";
 import SplitHover from "./page6";
 import WaveLogin from "./page7";
 import SoundBoard from "./page8";
-import DadJoke from "./page9";
-import FaqContent from "./page10";
-
 const Home = () => {
   return (
     <div className="hero">
@@ -47,14 +44,6 @@ const Home = () => {
       <div className="d8">
         <h1>8. Sound Effect</h1>
         <SoundBoard />
-      </div>
-      <div className="d9">
-        <h1>9. Dad Jokes</h1>
-        <DadJoke />
-      </div>
-      <div className="d10">
-        <h1>10. KeyCode</h1>
-        <FaqContent />
       </div>
     </div>
   );

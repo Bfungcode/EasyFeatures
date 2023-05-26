@@ -13,6 +13,7 @@ import Clock from "./page11";
 import KineticCss from "./page12";
 import SkeletonLoader from "./page13";
 import AutoText from "./page14";
+import AnimatedCountdown from "./page15";
 const Home = () => {
   return (
     <div className="hero">
@@ -74,6 +75,10 @@ const Home = () => {
       <div className="d14">
         <h1>14. Toast Notification</h1>
         <AutoText />
+      </div>
+      <div className="d15">
+        <h1>15. Animated Countdown</h1>
+        <AnimatedCountdown />
       </div>
     </div>
   );

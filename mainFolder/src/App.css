@@ -118,3 +118,21 @@ body {
     margin-top: 10%;
     margin-bottom: 5%;
 }
+
+.d11 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+.d12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}

@@ -11,7 +11,7 @@ const FaqCollapse = () => {
   const [toggle5, setToggle5] = useState(false);
 
   return (
-    <div d9Wrapper>
+    <div className="d9Wrapper">
       <div className="container">
         <div className="faq-container">
           <h1>Frequently Asked Questions</h1>

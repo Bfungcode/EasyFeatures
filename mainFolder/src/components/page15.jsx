@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/d15.css";
 
 const AnimatedCountdown = () => {
+  const [toggle1, setToggle1] = useState(false);
+  const [toggle2, setToggle2] = useState(false);
+  const [toggle3, setToggle3] = useState(false);
+
   return (
     <div className="d15Wrapper">
-      <div id="panel" class="panel-container">
+      <div id="panel" className="panel-container">
         <strong>
           How satisfied are you with our <br /> customer support performance?
         </strong>
-        <div class="ratings-container">
-          <div class="rating">
+        <div className="ratings-container">
+          <div
+            className={`rating ${toggle1 ? "active" : ""}`}
+            onClick={() => {
+              setToggle1(true);
+              setToggle2(false);
+              setToggle3(false);
+            }}
+          >
             <img
               src="https://img.icons8.com/external-neu-royyan-wijaya/64/000000/external-emoji-neumojis-smiley-neu-royyan-wijaya-17.png"
               alt=""
@@ -17,7 +28,14 @@ const AnimatedCountdown = () => {
             <small>Unhappy</small>
           </div>
 
-          <div class="rating">
+          <div
+            className={`rating ${toggle2 ? "active" : ""}`}
+            onClick={() => {
+              setToggle1(false);
+              setToggle2(true);
+              setToggle3(false);
+            }}
+          >
             <img
               src="https://img.icons8.com/external-neu-royyan-wijaya/64/000000/external-emoji-neumojis-smiley-neu-royyan-wijaya-3.png"
               alt=""
@@ -25,7 +43,14 @@ const AnimatedCountdown = () => {
             <small>Neutral</small>
           </div>
 
-          <div class="rating active">
+          <div
+            className={`rating ${toggle3 ? "active" : ""}`}
+            onClick={() => {
+              setToggle1(false);
+              setToggle2(false);
+              setToggle3(true);
+            }}
+          >
             <img
               src="https://img.icons8.com/external-neu-royyan-wijaya/64/000000/external-emoji-neumojis-smiley-neu-royyan-wijaya-30.png"
               alt=""
@@ -33,7 +58,7 @@ const AnimatedCountdown = () => {
             <small>Satisfied</small>
           </div>
         </div>
-        <button class="btn" id="send">
+        <button className="btn15" id="send">
           Send Review
         </button>
       </div>

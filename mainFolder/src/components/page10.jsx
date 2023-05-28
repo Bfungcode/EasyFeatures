@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/d10.css";
 
 const HamburgerCollapse = () => {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
   return (
     <div className="d10Wrapper">
       <div className={`nav ${toggle ? "active" : ""}`} id="nav">

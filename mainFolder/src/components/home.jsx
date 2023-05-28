@@ -14,6 +14,13 @@ import KineticCss from "./page12";
 import SkeletonLoader from "./page13";
 import AutoText from "./page14";
 import AnimatedCountdown from "./page15";
+import TestiCard from "./page16";
+import IncrementBox from "./page17";
+import EnableButton from "./page18";
+import RangeDown from "./page19";
+import WaterContainer from "./page20";
+import CodeConfirmation from "./page20";
+
 const Home = () => {
   return (
     <div className="hero">
@@ -79,6 +86,26 @@ const Home = () => {
       <div className="d15">
         <h1>15. Animated Countdown</h1>
         <AnimatedCountdown />
+      </div>
+      <div className="d16">
+        <h1>16. Testimonial Content</h1>
+        <TestiCard />
+      </div>
+      <div className="d17">
+        <h1>17. Increment Counter</h1>
+        <IncrementBox />
+      </div>
+      <div className="d18">
+        <h1>18. Enable Button</h1>
+        <EnableButton />
+      </div>
+      <div className="d19">
+        <h1>19. Range Slider</h1>
+        <RangeDown />
+      </div>
+      <div className="d20">
+        <h1>20. Code Confirmation</h1>
+        <CodeConfirmation />
       </div>
     </div>
   );

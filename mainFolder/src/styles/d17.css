@@ -1,0 +1,25 @@
+.d17Wrapper {
+    display: flex;
+    background-color: #476ce4;
+    border-radius: 15px;
+    color: white;
+}
+
+.counter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 30px 50px;
+}
+
+.counter {
+    font-size: 60px;
+    margin-top: 10px;
+}
+
+@media (max-width: 580px) {
+    body {
+        flex-direction: column;
+    }
+}

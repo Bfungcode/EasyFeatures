@@ -31,7 +31,7 @@ const AutoText = () => {
         <h1 id="textAuto">Starting...</h1>
       </div>
 
-      <autoT>
+      <div className="autoT">
         <label for="speed">Speed:</label>
         <input
           type="number"
@@ -42,7 +42,7 @@ const AutoText = () => {
           max="10"
           step="1"
         />
-      </autoT>
+      </div>
     </div>
   );
 };

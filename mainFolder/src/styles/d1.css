@@ -1,7 +1,6 @@
 .container {
     display: flex;
     width: 100vw;
-    padding-bottom: 10%;
 }
 
 .expan {
@@ -17,7 +16,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 70vh;
+    height: 30vh;
     color: white;
     cursor: pointer;
     flex: 0.7;

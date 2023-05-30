@@ -36,8 +36,9 @@ body::before {
     color: black;
     box-shadow: inset;
     font-family: 'Staatliche';
-    font-size: 64px;
+    font-size: 72px;
     color: white;
+    margin-bottom: 10%;
 }
 
 .blob-cont {
@@ -199,12 +200,12 @@ body::before {
 }
 
 .divHeader {
-    margin-top: 2%;
+    margin-top: 10%;
 }
 
 .divHeader h1 {
     margin: 0;
-    font-size: 62px;
+    font-size: 92px;
     color: white;
     display: flex;
     text-align: center;

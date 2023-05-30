@@ -14,6 +14,7 @@ import {
   darcula,
   atomOneDark,
 } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import SearchIcon from "./page3";
 
 const Display = () => {
   const [copyJSX, setCopyJSX] = useState(false);

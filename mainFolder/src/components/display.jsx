@@ -2725,6 +2725,24 @@ const Display = (e) => {
   const { jsxD18, cssD18 } = d18;
   const { jsxD19, cssD19 } = d19;
   const { jsxD20, cssD20 } = d20;
+  const [show1, setShow1] = useState(false);
+  const [show2, setShow2] = useState(false);
+  const [show3, setShow3] = useState(false);
+  const [show4, setShow4] = useState(false);
+  const [show5, setShow5] = useState(false);
+  const [show6, setShow6] = useState(false);
+  const [show7, setShow7] = useState(false);
+  const [show8, setShow8] = useState(false);
+  const [show9, setShow9] = useState(false);
+  const [show10, setShow10] = useState(false);
+  const [show11, setShow11] = useState(false);
+  const [show12, setShow12] = useState(false);
+  const [show13, setShow13] = useState(false);
+  const [show15, setShow15] = useState(false);
+  const [show17, setShow17] = useState(false);
+  const [show18, setShow18] = useState(false);
+  const [show19, setShow19] = useState(false);
+  const [show20, setShow20] = useState(false);
   function lockA() {
     const xPos = window.scrollX;
     const yPos = window.scrollY;
@@ -2743,8 +2761,6 @@ const Display = (e) => {
     <div className="divHero">
       <div className="divHeader">
         <h1>EasyFeatures</h1>
-      </div>
-      <div className="divMain">
         <h1>From front end developer for front end developer.</h1>
       </div>
       <div className="divBody">
@@ -2758,7 +2774,12 @@ const Display = (e) => {
           <div class="red blob"></div>
           <div class="green blob"></div>
         </div>
-        <div className="container">
+        <div class="blob-cont2">
+          <div class="yellow blob"></div>
+          <div class="red blob"></div>
+          <div class="green blob"></div>
+        </div>
+        <div className="divWrapper">
           <div className="displayWrap">
             <div className="allWrap">
               <div className="displayOne">
@@ -2768,101 +2789,114 @@ const Display = (e) => {
                 <div className="displayComponent">
                   <ProgressSteps />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow1(!show1);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show1 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD2);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD2);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD2}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD2}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD2);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD2);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD2}
-                      </SyntaxHighlighter>
+                          {cssD2}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="displayTwo">
@@ -2872,101 +2906,113 @@ const Display = (e) => {
                 <div className="displayComponent">
                   <ExpendingCard />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow2(!show2);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show2 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD1);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD1);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD1}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD1}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD2);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(cssD2);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD1}
-                      </SyntaxHighlighter>
+                          {cssD1}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="displayThree">
@@ -2976,205 +3022,229 @@ const Display = (e) => {
                 <div className="displayComponent">
                   <SearchIcon />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow3(!show3);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show3 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD3);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD3);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD3}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD3}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD3);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(cssD3);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD3}
-                      </SyntaxHighlighter>
+                          {cssD3}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="displayFour">
                 <div className="displayName">
                   <h1>Blur Loading</h1>
                 </div>
-                <div className="displayComponent">
+                <div className="displayComponent4">
                   <Imageload />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow4(!show4);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show4 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD4);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD4);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD4}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD4}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD4);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(cssD4);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD4}
-                      </SyntaxHighlighter>
+                          {cssD4}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="displayFive">
@@ -3184,101 +3254,113 @@ const Display = (e) => {
                 <div className="displayComponent">
                   <ContentSlide />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow5(!show5);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show5 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD5);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD5);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD5}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD5}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD5);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(cssD5);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD5}
-                      </SyntaxHighlighter>
+                          {cssD5}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="displaySix">
@@ -3288,101 +3370,113 @@ const Display = (e) => {
                 <div className="displayComponent">
                   <SplitHover />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow6(!show6);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show6 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD6);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD6);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD6}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD6}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD6);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(cssD6);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD6}
-                      </SyntaxHighlighter>
+                          {cssD6}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="displaySeven">
@@ -3392,101 +3486,113 @@ const Display = (e) => {
                 <div className="displayComponent">
                   <WaveLogin />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow7(!show7);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show7 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD7);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD7);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD7}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD7}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD7);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(cssD7);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD7}
-                      </SyntaxHighlighter>
+                          {cssD7}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="displayEight">
@@ -3496,101 +3602,113 @@ const Display = (e) => {
                 <div className="displayComponent">
                   <SoundBoard />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow8(!show8);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show8 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD8);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD8);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD8}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD8}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD8);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(cssD8);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD8}
-                      </SyntaxHighlighter>
+                          {cssD8}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="displayNine">
@@ -3600,101 +3718,113 @@ const Display = (e) => {
                 <div className="displayComponent">
                   <FaqCollapse />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow9(!show9);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show9 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD9);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD9);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD9}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD9}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD9);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(cssD9);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD9}
-                      </SyntaxHighlighter>
+                          {cssD9}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="displayTen">
@@ -3704,101 +3834,113 @@ const Display = (e) => {
                 <div className="displayComponentTen">
                   <HamburgerCollapse />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow10(!show10);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show10 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD10);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD10);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD10}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD10}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD10);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(cssD10);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD10}
-                      </SyntaxHighlighter>
+                          {cssD10}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="displayEleven">
@@ -3808,101 +3950,113 @@ const Display = (e) => {
                 <div className="displayComponent">
                   <Clock />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow11(!show11);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show11 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD11);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD11);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD11}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD11}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD11);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(cssD11);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD11}
-                      </SyntaxHighlighter>
+                          {cssD11}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="displayTwelve">
@@ -3912,101 +4066,113 @@ const Display = (e) => {
                 <div className="displayComponent">
                   <KineticCss />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow12(!show12);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show12 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD12);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD12);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD12}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD12}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD12);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(cssD12);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD12}
-                      </SyntaxHighlighter>
+                          {cssD12}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="display13">
@@ -4016,101 +4182,113 @@ const Display = (e) => {
                 <div className="displayComponent">
                   <SkeletonLoader />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow13(!show13);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show13 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD13);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD13);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD13}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD13}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD13);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(cssD13);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD13}
-                      </SyntaxHighlighter>
+                          {cssD13}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="display15">
@@ -4120,101 +4298,113 @@ const Display = (e) => {
                 <div className="displayComponent">
                   <AnimatedCountdown />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow15(!show15);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show15 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD15);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD15);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD15}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD15}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD15);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.writeText(cssD15);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD15}
-                      </SyntaxHighlighter>
+                          {cssD15}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="display17">
@@ -4224,101 +4414,113 @@ const Display = (e) => {
                 <div className="displayComponent">
                   <IncrementBox />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow17(!show17);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show17 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD17);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD17);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD17}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD17}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD17);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(cssD17);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD17}
-                      </SyntaxHighlighter>
+                          {cssD17}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="display18">
@@ -4328,101 +4530,113 @@ const Display = (e) => {
                 <div className="displayComponent">
                   <EnableButton />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow18(!show18);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show18 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD18);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD18);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD18}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD18}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD18);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(cssD18);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD18}
-                      </SyntaxHighlighter>
+                          {cssD18}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="display19">
@@ -4432,101 +4646,113 @@ const Display = (e) => {
                 <div className="displayComponent">
                   <RangeDown />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow19(!show19);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show19 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD19);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD19);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD19}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD19}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD19);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(cssD19);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD19}
-                      </SyntaxHighlighter>
+                          {cssD19}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="allWrap">
               <div className="display20">
@@ -4536,101 +4762,113 @@ const Display = (e) => {
                 <div className="displayComponent">
                   <CodeConfirmation />
                 </div>
+                <div
+                  className="btnShow"
+                  onClick={() => {
+                    setShow20(!show20);
+                  }}
+                >
+                  Show Code
+                </div>
               </div>
-              <div className="displayCode">
-                <div className="editorWrap">
-                  <div className="editorJSX">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>JSX</h6>
-                      </div>
-                      {copyJSX ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+              {show20 ? (
+                <div className="displayCode">
+                  <div className="editorWrap">
+                    <div className="editorJSX">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>JSX</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(jsxD20);
-                            setCopyJSX(true);
-                            setTimeout(() => {
-                              setCopyJSX(false);
-                            }, 1500);
+                        {copyJSX ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(jsxD20);
+                              setCopyJSX(true);
+                              setTimeout(() => {
+                                setCopyJSX(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={false}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={false}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {jsxD20}
-                      </SyntaxHighlighter>
-                    </div>
-                  </div>
-                  <div className="editorCSS">
-                    <div className="editorTitle">
-                      <div className="editorName">
-                        <h6>CSS</h6>
+                          {jsxD20}
+                        </SyntaxHighlighter>
                       </div>
-                      {copyCSS ? (
-                        <div className="iconCopy">
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faCheckCircle}
-                          />
-                          <p>Copied</p>
+                    </div>
+                    <div className="editorCSS">
+                      <div className="editorTitle">
+                        <div className="editorName">
+                          <h6>CSS</h6>
                         </div>
-                      ) : (
-                        <div
-                          className="iconCopy"
-                          onClick={() => {
-                            navigator.clipboard.writeText(cssD20);
-                            setCopyCSS(true);
-                            setTimeout(() => {
-                              setCopyCSS(false);
-                            }, 1500);
+                        {copyCSS ? (
+                          <div className="iconCopy">
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faCheckCircle}
+                            />
+                            <p>Copied</p>
+                          </div>
+                        ) : (
+                          <div
+                            className="iconCopy"
+                            onClick={() => {
+                              navigator.clipboard.writeText(cssD20);
+                              setCopyCSS(true);
+                              setTimeout(() => {
+                                setCopyCSS(false);
+                              }, 1500);
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              className="faClip"
+                              icon={faClipboard}
+                            />
+                            <p>Copy code</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="editorCode">
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={atomOneDark}
+                          wrapLongLines={true}
+                          customStyle={{
+                            height: "300px",
                           }}
                         >
-                          <FontAwesomeIcon
-                            className="faClip"
-                            icon={faClipboard}
-                          />
-                          <p>Copy code</p>
-                        </div>
-                      )}
-                    </div>
-                    <div className="editorCode">
-                      <SyntaxHighlighter
-                        language="javascript"
-                        style={atomOneDark}
-                        wrapLongLines={true}
-                        customStyle={{
-                          height: "300px",
-                        }}
-                      >
-                        {cssD20}
-                      </SyntaxHighlighter>
+                          {cssD20}
+                        </SyntaxHighlighter>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
           </div>
         </div>

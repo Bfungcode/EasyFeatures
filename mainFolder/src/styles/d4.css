@@ -7,17 +7,20 @@
     overflow: hidden;
     margin: 0;
     position: relative;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .bgImage {
     background: url('https://images.unsplash.com/photo-1509514026798-53d40bf1aa09?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80') no-repeat center center/cover;
+    background-image: '../pictures/projeto-cafe-gato-mourisco-X_naEK5hAtg-unsplash (1).jpg';
     position: absolute;
     top: -30px;
     left: -30px;
     right: 0;
     width: calc(100vw + 60px);
     height: calc(100vh + 60px);
-    z-index: -1;
+    z-index: 1;
     filter: blur(30px);
 }
 
@@ -30,4 +33,5 @@
     align-content: center;
     font-size: 50px;
     color: white;
+    z-index: 5;
 }

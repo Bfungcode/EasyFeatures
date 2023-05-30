@@ -2760,7 +2760,7 @@ const Display = (e) => {
   return (
     <div className="divHero">
       <div className="divHeader">
-        <h1>EasyFeatures</h1>
+        <h1>EasyFeatures.</h1>
         <h1>From front end developer for front end developer.</h1>
       </div>
       <div className="divBody">

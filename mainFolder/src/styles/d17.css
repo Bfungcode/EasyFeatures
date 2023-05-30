@@ -1,6 +1,9 @@
 .d17Wrapper {
     display: flex;
-    background-color: #476ce4;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     border-radius: 15px;
     color: white;
 }

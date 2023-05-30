@@ -29,9 +29,6 @@ const ContentSlide = () => {
       <div className="box">
         <h2>Content</h2>
       </div>
-      <div className="box">
-        <h2>Content</h2>
-      </div>
     </div>
   );
 };

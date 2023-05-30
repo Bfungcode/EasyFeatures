@@ -15,15 +15,12 @@
             text-align: center;
             align-items: center;
             align-content: center;
-            margin: 5%;
-            padding: 42px 24px;
+            padding: 24px 24px;
         }
         
         .autoT {
             position: relative;
-            padding: 10px 20px;
             font-size: 18px;
-            margin-top: 5%;
             opacity: 0;
         }
         

@@ -7,9 +7,7 @@ const AutoText = () => {
     const speedEl = document.getElementById("speed");
     const text = "I Love Banana";
     let idx = 1;
-    let speed = 300 / speedEl.value;
-
-    writeText();
+    let speed = 300;
 
     function writeText() {
       textEl.innerText = text.slice(0, idx);
@@ -23,7 +21,8 @@ const AutoText = () => {
       setTimeout(writeText, speed);
     }
 
-    speedEl.addEventListener("input", (e) => (speed = 300 / e.target.value));
+    speedEl.addEventListener("input", (e) => (speed = 10));
+    writeText();
   });
   return (
     <div className="d14Wrapper">

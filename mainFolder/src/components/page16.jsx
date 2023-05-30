@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/d16.css";
 
 const TestiCard = () => {
@@ -48,26 +48,27 @@ const TestiCard = () => {
       text: "This guy is a young and talented IT professional, proactive and responsible, with a strong work ethic. He is very strong in PSD2HTML conversions and HTML/CSS technology. He is a quick learner, eager to learn new technologies. He is focused and has the good dynamics to achieve due dates and outstanding results.",
     },
   ];
-  let idx = 1;
-  function updateTestimonial() {
-    const testimonial = document.querySelector(".testimonial");
-    const userImage = document.querySelector(".user-image");
-    const username = document.querySelector(".username");
-    const role = document.querySelector(".role");
-    const { name, position, photo, text } = testimonials[idx];
+  useEffect(() => {
+    let idx = 1;
+    setInterval(() => {
+      const testimonial = document.querySelector(".testimonial");
+      const userImage = document.querySelector(".user-image");
+      const username = document.querySelector(".username");
+      const role = document.querySelector(".role");
+      const { name, position, photo, text } = testimonials[idx];
 
-    testimonial.innerHTML = text;
-    userImage.src = photo;
-    username.innerHTML = name;
-    role.innerHTML = position;
+      testimonial.innerHTML = text;
+      userImage.src = photo;
+      username.innerHTML = name;
+      role.innerHTML = position;
 
-    idx++;
+      idx++;
 
-    if (idx > testimonials.length - 1) {
-      idx = 0;
-    }
-  }
-  setInterval(updateTestimonial, 10000);
+      if (idx > testimonials.length - 1) {
+        idx = 0;
+      }
+    }, 10000);
+  });
   return (
     <div className="d16Wrapper">
       <div class="testimonial-container">

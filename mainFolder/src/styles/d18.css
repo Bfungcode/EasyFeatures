@@ -1,10 +1,12 @@
 .d18Wrapper {
-    background-color: #476ce4;
-    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     width: 100%;
     color: white;
     text-align: center;
-    padding: 5%;
 }
 
 .toggle-container {

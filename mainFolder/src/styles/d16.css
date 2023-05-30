@@ -1,6 +1,10 @@
 .d16Wrapper {
     box-sizing: border-box;
-    width: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 .testimonial-container {

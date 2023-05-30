@@ -1,3 +1,10 @@
+.d15Wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
 .panel-container {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);

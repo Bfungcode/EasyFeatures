@@ -31,6 +31,7 @@ body::before {
 }
 
 .blob-cont {
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,7 +39,6 @@ body::before {
     z-index: -2;
     height: 500px;
     width: 600px;
-    position: absolute;
     right: 10em;
     top: -0.1%;
 }
@@ -51,9 +51,9 @@ body::before {
     z-index: -2;
     height: 500px;
     width: 500px;
-    position: absolute;
+    position: fixed;
     right: 4;
-    margin-top: 20%;
+    margin-top: 10%;
     top: -1%;
 }
 

@@ -1,90 +1,82 @@
-.d16Wrapper {
-    box-sizing: border-box;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+.d18Wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  text-align: center;
 }
 
-.testimonial-container {
-    box-sizing: border-box;
-    background-color: #476ce4;
-    color: #fff;
-    border-radius: 15px;
-    margin: 20px 10px;
-    padding: 50px 80px;
-    max-width: 100%;
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  width: 200px;
 }
 
-.fa-quote {
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 28px;
-    position: absolute;
-    top: 70px;
+.toggleWrap {
+  display: flex;
+  justify-content: center;
 }
 
-.fa-quote-right {
-    left: 40px;
+.toggle {
+  visibility: hidden;
 }
 
-.fa-quote-left {
-    right: 40px;
+.label {
+  position: relative;
+  background-color: #d0d0d0;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 15px 0;
+  width: 80px;
+  height: 40px;
+  color: black;
 }
 
-.testimonial {
-    line-height: 28px;
-    text-align: justify;
-    box-sizing: border-box;
-    width: 600px;
-    height: 150px;
+.toggle:checked + .label {
+  background-color: black;
 }
 
-.user {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.ball {
+  background: #fff;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  align-items: center;
+  justify-content: center;
+  animation: slideOff 0.3s linear forwards;
 }
 
-.user .user-image {
-    border-radius: 50%;
-    height: 75px;
-    width: 75px;
-    object-fit: cover;
+.toggle:checked + .label .ball {
+  animation: slideOn 0.3s linear forwards;
 }
 
-.user .user-details {
-    margin-left: 10px;
+@keyframes slideOn {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1.2);
+  }
+  100% {
+    transform: translateX(40px) scale(1);
+  }
 }
 
-.user .username {
-    margin: 0;
-}
-
-.user .role {
-    font-weight: normal;
-    margin: 10px 0;
-}
-
-.progress-barTesti {
-    height: 4px;
-    width: 100%;
-    animation: grow 10s linear infinite;
-    transform-origin: left;
-    background-color: white;
-}
-
-@keyframes grow {
-    0% {
-        transform: scaleX(0);
-    }
-}
-
-@media (max-width: 768px) {
-    .testimonial-container {
-        padding: 20px 30px;
-    }
-    .fa-quote {
-        display: none;
-    }
+@keyframes slideOff {
+  0% {
+    transform: translateX(40px) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1.2);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
 }

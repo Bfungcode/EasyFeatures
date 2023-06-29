@@ -25,13 +25,11 @@ import HamburgerCollapse from "./page10";
 import Clock from "./page11";
 import KineticCss from "./page12";
 import SkeletonLoader from "./page13";
-import AutoText from "./page14";
-import AnimatedCountdown from "./page15";
-import TestiCard from "./page16";
-import IncrementBox from "./page17";
-import EnableButton from "./page18";
-import RangeDown from "./page19";
-import CodeConfirmation from "./page20";
+import AnimatedCountdown from "./page14";
+import IncrementBox from "./page15";
+import EnableButton from "./page16";
+import RangeDown from "./page17";
+import CodeConfirmation from "./page18";
 
 const Display = (e) => {
   const allObject = [

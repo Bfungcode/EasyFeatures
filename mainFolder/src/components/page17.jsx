@@ -1,51 +1,47 @@
 import React, { useEffect } from "react";
 import "../styles/d17.css";
 
-const IncrementBox = () => {
+const RangeDown = () => {
   useEffect(() => {
-    const counters = document.querySelectorAll(".counter");
+    const range = document.getElementById("range");
 
-    counters.forEach((counter) => {
-      counter.innerText = "0";
+    range.addEventListener("input", (e) => {
+      const value = +e.target.value;
+      const label = e.target.nextElementSibling;
 
-      const updateCounter = () => {
-        const target = +counter.getAttribute("data-target");
-        const c = +counter.innerText;
+      const range_width = getComputedStyle(e.target).getPropertyValue("width");
+      const label_width = getComputedStyle(label).getPropertyValue("width");
 
-        const increment = target / 200;
+      const num_width = +range_width.substring(0, range_width.length - 2);
+      const num_label_width = +label_width.substring(0, label_width.length - 2);
 
-        if (c < target) {
-          counter.innerText = `${Math.ceil(c + increment)}`;
-          setTimeout(updateCounter, 1);
-        } else {
-          counter.innerText = target;
-        }
-      };
+      const max = +e.target.max;
+      const min = +e.target.min;
 
-      updateCounter();
+      const left =
+        value * (num_width / max) -
+        num_label_width / 2 +
+        scale(value, min, max, 10, -10);
+
+      label.style.left = `${left}px`;
+
+      label.innerHTML = value;
     });
+
+    const scale = (num, in_min, in_max, out_min, out_max) => {
+      return (
+        ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
+      );
+    };
   });
   return (
-    <div className="d17Wrapper">
-      <div class="counter-container">
-        <i class="fab fa-twitter fa-3x"></i>
-        <div class="counter" data-target="12000"></div>
-        <span>Twitter Followers</span>
-      </div>
-
-      <div class="counter-container">
-        <i class="fab fa-youtube fa-3x"></i>
-        <div class="counter" data-target="5000"></div>
-        <span>YouTube Subscribers</span>
-      </div>
-
-      <div class="counter-container">
-        <i class="fab fa-facebook fa-3x"></i>
-        <div class="counter" data-target="7500"></div>
-        <span>Facebook Fans</span>
+    <div className="d19Wrapper">
+      <div class="range-container">
+        <input type="range" id="range" min="0" max="100" />
+        <label for="range">50</label>
       </div>
     </div>
   );
 };
 
-export default IncrementBox;
+export default RangeDown;
